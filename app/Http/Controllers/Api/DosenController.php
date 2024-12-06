@@ -13,7 +13,7 @@ class DosenController extends Controller
         return response()->json(Dosen::all());
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $validatedData = $request->validate([
             'nidn' => 'required|unique:dosens|max:10',
