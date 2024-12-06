@@ -16,8 +16,8 @@ class MakulController extends Controller
     public function create(Request $request)
     {
         $validatedData = $request->validate([
-            'kode_makul' => 'required|unique:makuls|max:10',
-            'nama_makul' => 'required|string|max:255',
+            'kode' => 'required|unique:makuls|max:10',
+            'nama' => 'required|string|max:255',
             'sks' => 'required|integer|min:1|max:6',
         ]);
 
@@ -51,8 +51,8 @@ class MakulController extends Controller
         }
 
         $validatedData = $request->validate([
-            'kode_makul' => 'sometimes|unique:makuls,kode_makul,' . $id,
-            'nama_makul' => 'sometimes|string|max:255',
+            'kode' => 'sometimes|unique:makuls,kode,' . $id,
+            'nama' => 'sometimes|string|max:255',
             'sks' => 'sometimes|integer|min:1|max:6',
         ]);
 
